@@ -16,8 +16,8 @@
 Advent of code solutions for 2022 in C
 
 ### The solutions are split by day in folders.
-Eeach contains a sample.txt for the sample input and an input.txt for the full input.
-### To compile on Linux day 3 run:
+Each contains a sample.txt for the sample input and an input.txt for the full input.
+### To compile on Linux e.g. day 3 run:
 ```
 make day=3
 ```
