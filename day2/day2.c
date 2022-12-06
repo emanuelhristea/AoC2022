@@ -1,37 +1,25 @@
 #include "../utils/utils.h"
 
+/*0 Rock, 1 Paper, 2 Scissors */
+int rock_paper_scissors[3][3] = { 
+    {3, 0 ,6}, 
+    {6, 3, 0}, 
+    {0, 6 ,3} 
+};
+
+int outcomes[3][3] = { 
+    {2, 0, 1}, 
+    {0, 1 ,2}, 
+    {1, 2 ,0}
+};
+
 int main(int argc, char** argv)
 {
-	if(parse_command_line(argc, argv) != 0) 
-		return 1;
+	if(parse_command_line(argc, argv) != 0) return 1;
 
 	char * line = NULL;
 	size_t len = 0;
 	ssize_t read = 0;
-    /*1 Rock, 2 Paper, 3 Scissors
-          1 2 3
-        1 3 0 6
-        2 6 3 0
-        3 0 6 3
-    
-    */
-    int rock_paper_scissors[3][3] = { 
-        {3, 0 ,6}, 
-        {6, 3, 0}, 
-        {0, 6 ,3} 
-    };
-
-    /* choose option based on outcome and opponent input
-          1 2 3
-        l 3 1 2
-        d 1 2 3
-        w 2 3 1
-    */
-    int outcomes[3][3] = { 
-        {2, 0, 1}, 
-        {0, 1 ,2}, 
-        {1, 2 ,0}
-    };
 	
     long sum = 0;
 	while((read = getline(&line, &len, f)) != -1)

@@ -27,8 +27,7 @@ void printStacks(Stack * stacks, int number)
 
 int main(int argc, char **argv)
 {
-    if(parse_command_line(argc, argv) != 0) 
-		return 1;
+    if(parse_command_line(argc, argv) != 0) return 1;
 
     char * line = NULL;
     ssize_t read;
@@ -67,7 +66,8 @@ int main(int argc, char **argv)
                 } 
             } 
         }
-        else{
+        else
+        {
             int move, from , to;
             if (3 == sscanf(line,"%*[^0123456789]%d%*[^0123456789]%d%*[^0123456789]%d",&move,&from,&to))
             {

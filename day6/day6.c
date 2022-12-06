@@ -13,8 +13,7 @@ bool is_unique(char* window, int size)
 
 int main(int argc, char **argv)
 {
-    if(parse_command_line(argc, argv) != 0) 
-		return 1;
+    if(parse_command_line(argc, argv) != 0) return 1;
 
     char * line = NULL;
     ssize_t read;

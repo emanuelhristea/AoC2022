@@ -2,8 +2,7 @@
 
 int main(int argc, char** argv)
 {
-	if(parse_command_line(argc, argv) != 0) 
-		return 1;
+	if(parse_command_line(argc, argv) != 0) return 1;
 
 	char * line = NULL;
 	size_t len = 0;
@@ -12,28 +11,19 @@ int main(int argc, char** argv)
     long sum = 0;
 	while((read = getline(&line, &len, f)) != -1)
 	{	
-        // read contains the number of read characters + \n
-		long s1, e1, s2, e2;
-
 		char * endp;
-		s1 = strtol(line, &endp, 10);
-		e1 = strtol(endp+1, &endp, 10);
-		s2 = strtol(endp+1, &endp, 10);
-		e2 = strtol(endp+1, NULL, 10);
+		long s1 = strtol(line, &endp, 10);
+		long e1 = strtol(endp+1, &endp, 10);
+		long s2 = strtol(endp+1, &endp, 10);
+		long e2 = strtol(endp+1, NULL, 10);
 
-		switch (part)
+		if(part == 1)
 		{
-			case 1:
-				if((s1 >= s2 && e1 <= e2) ||(s2 >= s1 && e2 <= e1)) sum++;
-				break;
-			case 2:
-				if((s1 >= s2 && s1 <= e2) ||
-					(e1 >= s2 && e1 <= e2) ||
-					(s2 >= s1 && s2 <= e1) ||
-					(e2 >= s1 && e2 <= e1)) sum++;
-				break;
-			default:
-				break;
+			if((s1 >= s2 && e1 <= e2) || (s2 >= s1 && e2 <= e1)) sum++;
+		}
+		else
+		{
+			if((s1 >= s2 && s1 <= e2) || (e1 >= s2 && e1 <= e2) || (s2 >= s1 && s2 <= e1) || (e2 >= s1 && e2 <= e1)) sum++;
 		}
 	}
 
