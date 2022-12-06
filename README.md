@@ -15,6 +15,9 @@
 # Advent of Code 2022 
 Advent of code solutions for 2022 in C
 
+# Results
+<!--- advent_readme_stars table --->
+
 ### The solutions are split by day in folders.
 Each contains a sample.txt for the sample input and an input.txt for the full input.
 ### To compile on Linux e.g. day 3 run:
