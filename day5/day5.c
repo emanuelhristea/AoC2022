@@ -1,6 +1,4 @@
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "../utils/utils.h"
 
 typedef struct node {
     char data;
@@ -14,33 +12,23 @@ typedef struct stack{
 } Stack;
 
 
+void printStacks(Stack * stacks, int number)
+{
+    for (int i = 0; i < number; ++i) 
+    {
+        printf("%d: ", i+1);
+        Node * it = stacks[i].tail;
+        while(it != NULL) {printf("%c ", it->data); it = it->prev;};
+        printf("\n");
+    }
+
+    printf("\n");
+}
+
 int main(int argc, char **argv)
 {
-    FILE * fp;
-
-    if(argc < 2){
-        printf("You need to provide the file \n");
-        return 1;
-    }
-
-    char * file_name = argv[1];
-    fp = fopen(file_name, "r");
-    if(fp == NULL){
-        printf("Couldn't open file %s \n", file_name);
-        return 1;
-    }
-
-    if(argc < 3){
-        printf("You need to provide the part number \n");
-        goto exit;
-    }
-
-    int part = atoi(argv[2]);
-    if(part <1 || part > 2){
-        printf("Invalid part number %d \n",part);
-        goto exit;
-    }
-    
+    if(parse_command_line(argc, argv) != 0) 
+		return 1;
 
     char * line = NULL;
     ssize_t read;
@@ -49,7 +37,7 @@ int main(int argc, char **argv)
     Stack data[9] = {0};
 
     int readInput = 0;
-    while ((read = getline(&line, &size, fp)) != -1){
+    while ((read = getline(&line, &size, f)) != -1){
         if(!readInput && strcmp(line, "\n") == 0) readInput = 1;
         if(!readInput)
         {
@@ -78,7 +66,8 @@ int main(int argc, char **argv)
                     }
                 } 
             } 
-        }else{
+        }
+        else{
             int move, from , to;
             if (3 == sscanf(line,"%*[^0123456789]%d%*[^0123456789]%d%*[^0123456789]%d",&move,&from,&to))
             {
@@ -109,7 +98,8 @@ int main(int argc, char **argv)
                             data[to].head = top;
                         }
                     } 
-                }else{
+                }
+                else{
                     // in this case we only need to find the node move down and swap pointers
                     Node * top = data[from].head;
                     Node * pickup = top;
@@ -138,21 +128,15 @@ int main(int argc, char **argv)
                 }
               
             }
-            for (int i = 0; i<9; ++i) {
-                printf("%d: ", i+1);
-                Node * it = data[i].tail;
-                while(it != NULL) {printf("%c ", it->data); it = it->prev;};
-                printf("\n");
-            }
-            printf("\n");
-        }  
 
+            printStacks(data, 9);       
+        }  
     }
 
+    printf("Result: \n");
     for (int i = 0; i<9; ++i) printf("%c",data[i].head->data);
     printf("\n");
 
-exit:
-    if(fp != NULL) fclose(fp);
+    if(f != NULL) fclose(f);
     return 0;
 }
