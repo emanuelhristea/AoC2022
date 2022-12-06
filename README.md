@@ -1,4 +1,18 @@
-# AoC2022
+```
+      .
+   __/ \__
+   \     /
+   /.'o'.\
+    .o.'.
+   .'.'o'.
+  o'.o.'.o.
+ .'.o.'.'.o.
+.o.'.o.'.o.'.
+   [_____]
+    \___/    
+
+```
+# Advent of Code 2022 
 Advent of code solutions for 2022 in C
 
 ### The solutions are split by day in folders.
