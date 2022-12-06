@@ -54,3 +54,6 @@ dkms.conf
 # VsCode
 settings.json
 .vscode
+
+#output
+output/
