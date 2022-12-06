@@ -5,7 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
+#define MAX_CHAR 256
 
 extern FILE * f;
 extern int part;
@@ -16,4 +18,4 @@ extern int part;
 */
 int parse_command_line(int argc, char ** argv);
 
-#endif /* PRIMARY_HEADER_H */
+#endif /* UTILS_H */

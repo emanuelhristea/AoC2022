@@ -17,6 +17,9 @@ all:
 	mkdir -p $(OBJDIR)
 	$(CC) $(C_FLAGS) $(CFILES) -o $(OBJDIR)/$(OBJ)
 
+sample:
+	./$(OBJDIR)/$(OBJ) day${day}/sample.txt ${part}
+	
 exec:
 	./$(OBJDIR)/$(OBJ) day${day}/input.txt ${part}
 
