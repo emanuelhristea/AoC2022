@@ -21,9 +21,13 @@ Each contains a sample.txt for the sample input and an input.txt for the full in
 ```
 make day=3
 ```
-### To run e.g. day 2 part 1 do:
+### To run e.g. day 2 part 1 with the input do:
 ```
 make exec day=2 part=1
+```
+### To run e.g. day 5 part 2 with the sample do:
+```
+make sample day=5 part=2
 ```
 ### To clean the output run
 ```
