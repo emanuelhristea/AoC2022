@@ -3,15 +3,15 @@ Advent of code solutions for 2022 in C
 
 ### The solutions are split by day in folders.
 Eeach contains a sample.txt for the sample input and an input.txt for the full input.
-### To compile on Linux run:
+### To compile on Linux day 3 run:
 ```
-gcc day<n>.c -o day<n>
+make day=3
 ```
-### To run part 1 do:
+### To run e.g. day 2 part 1 do:
 ```
-day<n> input.txt 1
+make exec day=2 part=1
 ```
-### Or part 2:
+### To clean the output run
 ```
-day<n> input.txt 2
+make clean
 ```
