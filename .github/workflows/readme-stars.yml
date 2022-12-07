@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: k2bd/advent-readme-stars@v1
+      - uses: k2bd/advent-readme-stars@v1.0.3
         with:
           userId: 2462189
           leaderboardId: 2462189
