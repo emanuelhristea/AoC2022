@@ -2,10 +2,11 @@
 CC = gcc
 
 C_FLAGS = -O2 \
-		  -Wall \
-		  -Werror=format-security\
-		  -Werror=implicit-function-declaration \
-		  -D_FORTIFY_SOURCE=2
+		  -Wall 
+
+C_DEBUG_FLAGS = -g \
+ 				-Wall
+
 
 CFILES = day${day}/day${day}.c \
 		 utils/utils.c
@@ -16,6 +17,10 @@ OBJ = day${day}
 all:
 	mkdir -p $(OBJDIR)
 	$(CC) $(C_FLAGS) $(CFILES) -o $(OBJDIR)/$(OBJ)
+
+debug:
+	mkdir -p $(OBJDIR)
+	$(CC) $(C_DEBUG_FLAGS) $(CFILES) -o $(OBJDIR)/$(OBJ)
 
 sample:
 	./$(OBJDIR)/$(OBJ) day${day}/sample.txt ${part}
