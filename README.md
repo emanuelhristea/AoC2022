@@ -31,6 +31,7 @@ Advent of code solutions for 2022 in C
 | [Day 8](https://adventofcode.com/2022/day/8) | ⭐ | ⭐ |
 | [Day 9](https://adventofcode.com/2022/day/9) | ⭐ | ⭐ |
 | [Day 10](https://adventofcode.com/2022/day/10) | ⭐ | ⭐ |
+| [Day 11](https://adventofcode.com/2022/day/11) | ⭐ |   |
 <!--- advent_readme_stars table --->
 
 ### The solutions are split by day in folders.
