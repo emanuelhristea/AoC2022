@@ -1,12 +1,8 @@
 
 CC = gcc
 
-C_FLAGS = -O2 \
-		  -Wall 
-
-C_DEBUG_FLAGS = -g \
- 				-Wall
-
+C_FLAGS = -Wall
+L_FLAGS = -lm
 
 CFILES = day${day}/day${day}.c \
 		 utils/utils.c
@@ -16,11 +12,11 @@ OBJ = day${day}
 
 all:
 	mkdir -p $(OBJDIR)
-	$(CC) $(C_FLAGS) $(CFILES) -o $(OBJDIR)/$(OBJ)
+	$(CC) -O2 $(C_FLAGS) $(CFILES) -o $(OBJDIR)/$(OBJ) $(L_FLAGS)
 
 debug:
 	mkdir -p $(OBJDIR)
-	$(CC) $(C_DEBUG_FLAGS) $(CFILES) -o $(OBJDIR)/$(OBJ)
+	$(CC) -g $(C_FLAGS) $(CFILES) -o $(OBJDIR)/$(OBJ) $(L_FLAGS)
 
 sample:
 	./$(OBJDIR)/$(OBJ) day${day}/sample.txt ${part}
